@@ -32,17 +32,11 @@ class Blog
     ];
 
     public static function getAll() {
-        return self::$posts;
+        return collect(self::$posts);
     }
 
     public static function findAll($slug) {
-        $blog = [];
-        
-        foreach (self::$posts as $post) {
-            if ($post['slug'] === $slug) {
-                $blog = $post;
-            }   
-        }
-        return $blog;
+        $blog = static::getAll();
+        return $blog->firstWhere('slug', $slug);
     }
 }
