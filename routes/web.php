@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Route;
 
@@ -26,19 +27,6 @@ Route::get('/about', function () {
         'title' => 'about'
     ]);
 });
-Route::get('/blog', function () {
-    
-    return view('posts', [
-        'title' => 'blog',
-        'posts' => Blog::getAll(),
-    ]);
-});
+Route::get('/blog', [BlogController::class, 'index']);
 
-Route::get('/post/{slug}', function ($slug) {
-    return view(
-        'detail_post',
-        [
-            'post' => Blog::findAll($slug)
-        ]
-    );
-});
+Route::get('/post/{slug}',  [BlogController::class, 'show']);
