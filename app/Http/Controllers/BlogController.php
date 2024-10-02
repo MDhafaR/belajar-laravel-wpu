@@ -10,7 +10,7 @@ class BlogController extends Controller
     function index() {
         return view('posts', [
             'title' => 'blog',
-            'posts' => Blog::getAll(),
+            'posts' => Blog::all(),
         ]);
     }
 
@@ -18,7 +18,7 @@ class BlogController extends Controller
         return view(
             'detail_post',
             [
-                'post' => Blog::findAll($slug)
+                'post' => Blog::find($slug)
             ]
         );
     }

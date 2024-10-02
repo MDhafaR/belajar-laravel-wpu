@@ -29,4 +29,4 @@ Route::get('/about', function () {
 });
 Route::get('/blog', [BlogController::class, 'index']);
 
-Route::get('/post/{slug}',  [BlogController::class, 'show']);
+Route::get('/post/{id}',  [BlogController::class, 'show']);

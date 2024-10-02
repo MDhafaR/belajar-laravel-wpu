@@ -8,9 +8,9 @@
 </head>
 <body>
     <article class="prose ml-4 bg-slate-200 mb-2 p-3 rounded-md">
-        <h3>Title : <span>{{ $post['title'] }}</span></h3>
-        <h3>Author : <span>{{ $post['author'] }}</span></h3>
-        <p>{{ $post['blog'] }}</p>
+        <h3>Title : <span>{{ $post->title }}</span></h3>
+        <h3>Author : <span>{{ $post->author }}</span></h3>
+        <p>{{ $post->body }}</p>
     </article>
 </body>
 </html>
