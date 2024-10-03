@@ -20,4 +20,8 @@ class Blog extends Model
     // guarded itu untuk column apa saja yang tidak boleh diisi
 
     // protected $guarded = ['id'];
+
+    function category() {
+        return $this->belongsTo(category::class);
+    }
 }

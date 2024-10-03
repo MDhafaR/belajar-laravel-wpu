@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CategoryController;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Route;
 
@@ -29,4 +30,8 @@ Route::get('/about', function () {
 });
 Route::get('/blog', [BlogController::class, 'index']);
 
-Route::get('/post/{id}',  [BlogController::class, 'show']);
+Route::get('/post/{post:slug}',  [BlogController::class, 'show']);
+
+Route::get('/category/{category:slug}',  [CategoryController::class, 'show']);
+
+Route::get('/categories',  [CategoryController::class, 'index']);
