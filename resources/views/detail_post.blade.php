@@ -9,7 +9,7 @@
 <body>
     <article class="prose ml-4 bg-slate-200 mb-2 p-3 rounded-md">
         <h3>Title : <span>{{ $post->title }}</span></h3>
-        <h3>Author : <span>{{ $post->author }}</span></h3>
+        <h3>Author : <span>{{ $post->user->name }}</span></h3>
         <h4>Category : <a href="/category/{{ $post->category->slug }}"><span>{{ $post->category->name }}</span></a></h4>
         <p>{{ $post->body }}</p>
     </article>

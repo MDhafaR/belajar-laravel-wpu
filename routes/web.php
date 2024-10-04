@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Models\Blog;
@@ -35,3 +36,7 @@ Route::get('/post/{post:slug}',  [BlogController::class, 'show']);
 Route::get('/category/{category:slug}',  [CategoryController::class, 'show']);
 
 Route::get('/categories',  [CategoryController::class, 'index']);
+
+Route::get('/author',  [AuthorController::class, 'index']);
+
+Route::get('/author/{user:id}',  [AuthorController::class, 'show']);

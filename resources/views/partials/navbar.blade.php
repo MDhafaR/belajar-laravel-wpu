@@ -8,5 +8,7 @@
         <a href="/blog" class="btn btn-ghost hover:text-white hover:underline {{ ($title === 'blog') ? 'text-yellow-300' : '' }}">Blog </a>
         <p>|</p>
         <a href="/categories" class="btn btn-ghost hover:text-white hover:underline {{ ($title === 'categories') ? 'text-yellow-300' : '' }}">Category </a>
+        <p>|</p>
+        <a href="/author" class="btn btn-ghost hover:text-white hover:underline {{ ($title === 'author') ? 'text-yellow-300' : '' }}">Author </a>
     </div>
   </div>
