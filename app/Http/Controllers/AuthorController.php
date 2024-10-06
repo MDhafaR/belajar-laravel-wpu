@@ -11,15 +11,16 @@ class AuthorController extends Controller
     function index() {
         return view('author', [
             'title'=>'author',
-            'authors'=>User::all()
+            'authors'=>User::with(['user','post'])->get()
         ]);
     }
+
 
     function show(User $user) {
         return view('detail_author', 
         [
             'author'=>$user->name,
-            'posts'=> $user->posts
+            'posts'=> $user->posts->load('user', 'category')
         ]
     );
     }

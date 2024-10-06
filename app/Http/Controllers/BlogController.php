@@ -11,7 +11,7 @@ class BlogController extends Controller
     function index() {
         return view('posts', [
             'title' => 'blog',
-            'posts' => Blog::all(),
+            'posts' => Blog::with(['category', 'user'])->latest()->get(), // untuk menampilkan sesuai urutan terbaru
         ]);
     }
 

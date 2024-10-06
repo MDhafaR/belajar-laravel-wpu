@@ -11,7 +11,7 @@ class CategoryController extends Controller
     function index() {
         return view('categories',[
             'title'=>'categories',
-            'categories'=>category::all()
+            'categories'=>category::get()
         ]);
     }
     function show(category $category) {
